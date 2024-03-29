@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 
 import MainPage from "../components/home-page/MainPage";
 import WeatherApp from "../components/home-page/WeatherApp";
@@ -17,10 +17,6 @@ const Home = () => {
   const tournamentApp = useRef<HTMLDivElement | null>(null);
   const applicationApp = useRef<HTMLDivElement | null>(null);
   const collectionServices = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <>

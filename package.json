@@ -9,7 +9,6 @@
   "homepage": "https://www.anastasiia.uk",
   "author": "Anastasiia Yershova",
   "dependencies": {
-    "@chakra-ui/react": "^2.8.2",
     "@emailjs/browser": "^3.7.0",
     "@emotion/cache": "^11.11.0",
     "@emotion/react": "^11.11.4",

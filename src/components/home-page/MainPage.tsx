@@ -1,4 +1,4 @@
-import { Box, Button, Modal, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import styled, { keyframes } from "styled-components";
 import {
   swing,
@@ -8,15 +8,18 @@ import {
   zoomIn,
 } from "react-animations";
 import React, { type RefObject } from "react";
-import { ContactForm } from "../ContactForm";
 import {
   codeFontFamily,
   fontSizes,
-  buttonStyle,
   colors,
   mainFontFamily,
 } from "../../styles";
 import { containerStyles } from "../../styles/projectStyles";
+import MainPageButtons from "./components/MainPageButtons";
+
+interface MainPageProps {
+  projects: RefObject<HTMLDivElement>;
+}
 
 const SlideInDown = styled.span`
   display: inline-block;
@@ -46,14 +49,7 @@ const BounceIn = styled.div`
   animation: 1s ${keyframes`${bounceInUp}`};
 `;
 
-const MainPage = (props: { projects: RefObject<HTMLDivElement> }) => {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
+const MainPage: React.FC<MainPageProps> = ({ projects }) => {
   return (
     <Box>
       <Box sx={containerStyles} bgcolor={colors.primary.main}>
@@ -92,31 +88,8 @@ const MainPage = (props: { projects: RefObject<HTMLDivElement> }) => {
               display="flex"
               justifyContent="space-evenly"
             >
-              <Button
-                onClick={() => {
-                  props.projects.current?.scrollIntoView({
-                    behavior: "smooth",
-                  });
-                }}
-                sx={buttonStyle({ color: "secondary" })}
-              >
-                See my projects
-              </Button>
-              <Button
-                onClick={handleOpen}
-                sx={buttonStyle({ color: "primary" })}
-              >
-                Contact me
-              </Button>
+              <MainPageButtons projects={projects} />
             </Stack>
-            <Modal
-              open={open}
-              onClose={handleClose}
-              aria-labelledby="modal-modal-title"
-              aria-describedby="modal-modal-description"
-            >
-              <ContactForm type="modal" setOpen={setOpen} />
-            </Modal>
           </BounceIn>
         </Box>
       </Box>

@@ -1,3 +1,4 @@
+"use client";
 import emailjs from "@emailjs/browser";
 import { Box, Button, FormGroup, TextField } from "@mui/material";
 import React from "react";
