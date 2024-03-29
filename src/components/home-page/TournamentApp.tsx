@@ -1,12 +1,12 @@
 import { RefObject } from "react";
 import { Box, Button, Link, Stack, Typography } from "@mui/material";
 
-import { buttonStyle, colors, fontSizes } from "../../../styles";
+import { buttonStyle, colors, fontSizes } from "../../styles";
 import {
   containerStyles,
   desriptionStyles,
   projectImage,
-} from "../../../styles/projectStyles";
+} from "../../styles/projectStyles";
 
 const TournamentApp = (props: {
   previous: RefObject<HTMLDivElement>;

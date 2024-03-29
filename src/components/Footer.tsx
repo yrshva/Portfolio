@@ -3,7 +3,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import { Box, Link, Stack } from "@mui/material";
 
-import { colors } from "../../styles";
+import { colors } from "../styles";
 
 const Footer = () => {
   const iconStyles = {

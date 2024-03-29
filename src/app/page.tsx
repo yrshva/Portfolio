@@ -1,11 +1,14 @@
+"use client";
+
 import React, { useEffect, useRef } from "react";
-import MainPage from "./HomePage/MainPage";
-import WeatherApp from "./HomePage/WeatherApp";
-import DictionaryApp from "./HomePage/DictionaryApp";
-import CollectionServices from "./HomePage/CollectionServices";
-import MobileDictionary from "./HomePage/MobileDictionary";
-import TournamentApp from "./HomePage/TournamentApp";
-import ApplicationsApp from "./HomePage/ApplicationsApp";
+
+import MainPage from "../components/home-page/MainPage";
+import WeatherApp from "../components/home-page/WeatherApp";
+import DictionaryApp from "../components/home-page/DictionaryApp";
+import CollectionServices from "../components/home-page/CollectionServices";
+import MobileDictionary from "../components/home-page/MobileDictionary";
+import TournamentApp from "../components/home-page/TournamentApp";
+import ApplicationsApp from "../components/home-page/ApplicationsApp";
 
 const Home = () => {
   const weatherApp = useRef<HTMLDivElement | null>(null);
@@ -14,9 +17,11 @@ const Home = () => {
   const tournamentApp = useRef<HTMLDivElement | null>(null);
   const applicationApp = useRef<HTMLDivElement | null>(null);
   const collectionServices = useRef<HTMLDivElement | null>(null);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <>
       <MainPage projects={weatherApp} />

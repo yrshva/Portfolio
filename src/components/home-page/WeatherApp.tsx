@@ -1,12 +1,12 @@
 import { Box, Button, Link, Stack, Typography } from "@mui/material";
 import { type RefObject } from "react";
 
-import { buttonStyle, colors, fontSizes } from "../../../styles";
+import { buttonStyle, colors, fontSizes } from "../../styles";
 import {
   containerStyles,
   desriptionStyles,
   projectImage,
-} from "../../../styles/projectStyles";
+} from "../../styles/projectStyles";
 
 const WeatherApp = (props: {
   current: RefObject<HTMLDivElement>;

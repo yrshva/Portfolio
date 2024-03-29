@@ -1,3 +1,4 @@
+"use client";
 import {
   Box,
   Button,
@@ -7,9 +8,10 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { HashLink } from "react-router-hash-link";
-import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 import {
   burgerButtonStyles,
@@ -22,12 +24,13 @@ import {
 const Header = () => {
   const [burgerClicked, setBurgerClicked] = useState<boolean>(false);
   const burger = useRef<HTMLHeadingElement>(null);
-  const url = useLocation();
-  const navigate = useNavigate();
+  const router = useRouter();
   const isMobile = useMediaQuery("(max-width: 600px)");
   const handleBurgerButtonClick = () => {
     burgerClicked ? setBurgerClicked(false) : setBurgerClicked(true);
   };
+  const pathname = usePathname();
+
   useEffect(() => {
     const handleClickOutside = (event: Event) => {
       if (
@@ -42,9 +45,10 @@ const Header = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [burger]);
+
   useEffect(() => {
     setBurgerClicked(false);
-  }, [url]);
+  }, [pathname]);
 
   const HeaderView = () => {
     if (isMobile) {
@@ -58,18 +62,18 @@ const Header = () => {
             </Box>
           </Box>
           {burgerClicked && (
-            <Box>
+            <Box mt={6}>
               <List>
                 <ListItemButton
                   onClick={() => {
-                    navigate("/");
+                    router.push("/");
                   }}
                 >
                   <ListItemText primary="Home" />
                 </ListItemButton>
                 <ListItemButton
                   onClick={() => {
-                    navigate("/about");
+                    router.push("/about");
                   }}
                 >
                   <ListItemText primary="About" />
@@ -84,15 +88,15 @@ const Header = () => {
         <Box height="60px" display="flex" justifyContent="center">
           <Box sx={fullHeaderStyles}>
             <Box margin="0 10px">
-              <Link to="/" style={linkStyles}>
+              <Link href="/" style={linkStyles}>
                 Home
               </Link>
-              <Link to="/about" style={linkStyles}>
+              <Link href="/about" style={linkStyles}>
                 About
               </Link>
-              <HashLink to="/about#contact" style={linkStyles}>
+              <Link href="/about#contact" style={linkStyles}>
                 Contact
-              </HashLink>
+              </Link>
             </Box>
           </Box>
         </Box>

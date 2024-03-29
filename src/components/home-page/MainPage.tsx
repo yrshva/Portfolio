@@ -8,15 +8,15 @@ import {
   zoomIn,
 } from "react-animations";
 import React, { type RefObject } from "react";
-import { ContactForm } from "../../shared/ContactForm";
+import { ContactForm } from "../ContactForm";
 import {
   codeFontFamily,
   fontSizes,
   buttonStyle,
   colors,
   mainFontFamily,
-} from "../../../styles";
-import { containerStyles } from "../../../styles/projectStyles";
+} from "../../styles";
+import { containerStyles } from "../../styles/projectStyles";
 
 const SlideInDown = styled.span`
   display: inline-block;
@@ -58,10 +58,25 @@ const MainPage = (props: { projects: RefObject<HTMLDivElement> }) => {
     <Box>
       <Box sx={containerStyles} bgcolor={colors.primary.main}>
         <Box marginTop={-10}>
-          <Typography fontSize={fontSizes.L} fontFamily={codeFontFamily}>
-            <HandSwing>👋</HandSwing>
-            <SlideInDown>Hi</SlideInDown> <SlideInRight>I am</SlideInRight>
-          </Typography>
+          <HandSwing>
+            <Typography fontSize={fontSizes.L} fontFamily={codeFontFamily}>
+              👋
+            </Typography>
+          </HandSwing>
+          <SlideInDown>
+            <Typography fontSize={fontSizes.L} fontFamily={codeFontFamily}>
+              Hi
+            </Typography>
+          </SlideInDown>
+          <SlideInRight>
+            <Typography
+              fontSize={fontSizes.L}
+              fontFamily={codeFontFamily}
+              ml={1}
+            >
+              I am
+            </Typography>
+          </SlideInRight>
           <Name>Anastasiia Yershova</Name>
           <Typography
             fontSize={fontSizes.L}

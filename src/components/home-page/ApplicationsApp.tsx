@@ -1,20 +1,24 @@
-import { RefObject } from "react";
 import { Box, Button, Link, Stack, Typography } from "@mui/material";
+import { RefObject } from "react";
 
-import { buttonStyle, colors, fontSizes } from "../../../styles";
+import { buttonStyle, colors, fontSizes } from "../../styles";
 import {
   containerStyles,
   desriptionStyles,
   projectImage,
-} from "../../../styles/projectStyles";
+} from "../../styles/projectStyles";
 
-const DictionaryApp = (props: {
+const ApplicationsApp = (props: {
   previous: RefObject<HTMLDivElement>;
   current: RefObject<HTMLDivElement>;
   next: RefObject<HTMLDivElement>;
 }) => {
   return (
-    <Box ref={props.current} bgcolor={colors.primary.main} sx={containerStyles}>
+    <Box
+      ref={props.current}
+      bgcolor={colors.secondary.main}
+      sx={containerStyles}
+    >
       <Box>
         <Stack
           direction={{ sm: "column", md: "row" }}
@@ -22,30 +26,26 @@ const DictionaryApp = (props: {
         >
           <Box sx={desriptionStyles}>
             <Typography fontSize={fontSizes.XL}>
-              Dictionary Application
+              Applications Application
             </Typography>
             <Typography>
-              You can search for any word`s definition and listen to the word`s
-              pronuncuation with the Dictionary Application. This product was
-              developed in React using REST API, React Hooks, Bootstrap. See the{" "}
+              A small application in React + Typescript using REST API,
+              Bootstrap, json-server. The data in the table is loaded from the
+              server. All the fields contain validation, form has appropriate
+              checks before submitting (disable Buttons or others) See the{" "}
               <Link
+                href="https://github.com/yrshva/fake-applications"
                 target="blank"
-                href="https://github.com/yrshva/dictionary-app"
               >
                 source code on GitHub
-              </Link>{" "}
-              or try{" "}
-              <Link target="blank" href="https://wordbook-app.netlify.app/">
-                demo
-              </Link>{" "}
-              to see how it works.
+              </Link>
+              .
             </Typography>
           </Box>
-          <img
-            src="/images/dictionary-app.png"
-            alt="dictionary application screenshot"
-            style={projectImage}
-          />
+          <video style={projectImage} controls muted>
+            <source src="/videos/applications-app.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </Stack>
         <Stack
           margin={3}
@@ -74,4 +74,4 @@ const DictionaryApp = (props: {
     </Box>
   );
 };
-export default DictionaryApp;
+export default ApplicationsApp;
