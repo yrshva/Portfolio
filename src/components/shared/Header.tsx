@@ -51,9 +51,6 @@ const Header = () => {
       return (
         <Box ref={burger} display="block">
           <Box sx={burgerWrapStyles}>
-            <Link to="/" style={linkStyles}>
-              YRSHVA
-            </Link>
             <Box sx={burgerIconStyles}>
               <Button onClick={handleBurgerButtonClick} sx={burgerButtonStyles}>
                 <MenuIcon sx={{ fontSize: 30 }} />
@@ -86,9 +83,6 @@ const Header = () => {
       return (
         <Box height="60px" display="flex" justifyContent="center">
           <Box sx={fullHeaderStyles}>
-            <Link to="/" className="logo" style={linkStyles}>
-              YRSHVA
-            </Link>
             <Box margin="0 10px">
               <Link to="/" style={linkStyles}>
                 Home

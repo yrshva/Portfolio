@@ -1,13 +1,12 @@
 {
-  "name": "yrshva",
+  "name": "portfolio",
   "version": "0.0.0",
-  "description": "yrshva.com portfolio app",
-  "main": "webpack.config.js",
+  "description": "ana's portfolio app",
   "repository": {
-    "url": "https://github.com/yrshva/yrshva.com",
+    "url": "https://github.com/yrshva/portfolio",
     "type": "git"
   },
-  "homepage": "https://www.yrshva.com/",
+  "homepage": "https://www.anastasiia.uk",
   "author": "Anastasiia Yershova",
   "dependencies": {
     "@emailjs/browser": "^3.7.0",
@@ -31,9 +30,11 @@
     "babel-loader": "^9.1.2",
     "bootstrap": "^5.2.1",
     "css-loader": "^6.7.3",
+    "eslint": "^8.57.0",
     "file-loader": "^6.2.0",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "next": "latest",
     "postcss-loader": "^7.1.0",
     "prettier": "^2.7.1",
     "react": "^18.2.0",
@@ -57,27 +58,15 @@
   },
   "scripts": {
     "clean": "rm -rf dist",
-    "start": "webpack-dev-server --config webpack.config.js",
-    "build": "webpack --config webpack.config.js",
-    "lint": "eslint . --ext .ts,.tsx",
-    "lint:fix": "eslint --fix --ext .ts,.tsx ."
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "packageManager": "yarn@3.2.3",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.43.0",
-    "eslint": "^8.0.1",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-config-standard-with-typescript": "latest",
-    "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-n": "^15.0.0",
-    "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-react": "latest",
+    "eslint-config-next": "14.1.4",
     "prettier": "2.8.6",
     "typescript": "*",
     "webpack-cli": "^5.0.1"

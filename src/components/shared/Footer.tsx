@@ -1,4 +1,3 @@
-import TelegramIcon from "@mui/icons-material/Telegram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
@@ -19,7 +18,7 @@ const Footer = () => {
       <Stack direction="row" spacing={2} display="flex" justifyContent="center">
         <Link
           id="email"
-          href="mailto:anastasia.yershova@yahoo.com"
+          href="mailto:yershova.business@gmail.com"
           title="Anastasiia's email"
           sx={iconStyles}
         >
@@ -32,14 +31,6 @@ const Footer = () => {
           sx={iconStyles}
         >
           <LinkedInIcon />
-        </Link>
-        <Link
-          href="https://t.me/yrshva"
-          target="blank"
-          title="Anastasiia's Telegram"
-          sx={iconStyles}
-        >
-          <TelegramIcon />
         </Link>
         <Link
           href="https://github.com/yrshva"

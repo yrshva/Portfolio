@@ -1,12 +1,12 @@
 import { RefObject } from "react";
 import { Box, Button, Link, Stack, Typography } from "@mui/material";
+
 import { buttonStyle, colors, fontSizes } from "../../../styles";
 import {
   containerStyles,
   desriptionStyles,
   projectImage,
 } from "../../../styles/projectStyles";
-import CollectionServicesImage from "../../../images/collection-services.mp4";
 
 const CollectionServices = (props: {
   previous: RefObject<HTMLDivElement>;
@@ -35,7 +35,7 @@ const CollectionServices = (props: {
             </Typography>
           </Box>
           <video style={projectImage} controls muted>
-            <source src={CollectionServicesImage} type="video/mp4" />
+            <source src="videos/collection-services.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </Stack>

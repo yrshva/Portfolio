@@ -1,12 +1,12 @@
 import { RefObject } from "react";
 import { Box, Button, Link, Stack, Typography } from "@mui/material";
+
 import { buttonStyle, colors, fontSizes } from "../../../styles";
 import {
   containerStyles,
   desriptionStyles,
   projectImage,
 } from "../../../styles/projectStyles";
-import DictionaryAppImage from "../../../images/dictionary-app.png";
 
 const DictionaryApp = (props: {
   previous: RefObject<HTMLDivElement>;
@@ -42,7 +42,7 @@ const DictionaryApp = (props: {
             </Typography>
           </Box>
           <img
-            src={DictionaryAppImage}
+            src="/images/dictionary-app.png"
             alt="dictionary application screenshot"
             style={projectImage}
           />
