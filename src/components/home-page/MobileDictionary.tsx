@@ -1,11 +1,12 @@
 import { RefObject } from "react";
 import { Box, Button, Link, Stack, Typography } from "@mui/material";
-import { buttonStyle, colors, fontSizes } from "../../../styles";
+
+import { buttonStyle, colors, fontSizes } from "../../styles";
 import {
   containerStyles,
   desriptionStyles,
-} from "../../../styles/projectStyles";
-import MobileDictionaryVideo from "../../../images/mobile-dictionary.mp4";
+  projectImage,
+} from "../../styles/projectStyles";
 
 const MobileDictionary = (props: {
   previous: RefObject<HTMLDivElement>;
@@ -41,12 +42,8 @@ const MobileDictionary = (props: {
               .
             </Typography>
           </Box>
-          <video
-            style={{ margin: "auto", maxWidth: "300px", borderRadius: "30px" }}
-            controls
-            muted
-          >
-            <source src={MobileDictionaryVideo} type="video/mp4" />
+          <video style={projectImage} controls muted>
+            <source src="/videos/mobile-dictionary.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </Stack>

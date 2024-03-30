@@ -1,16 +1,10 @@
-import { Box } from "@mui/material";
-import { useEffect } from "react";
-
-import Resume from "./AboutPage/Resume";
-import { ContactForm } from "../shared/ContactForm";
+import Resume from "../../components/Resume";
+import { ContactForm } from "../../components/ContactForm";
 import { colors } from "../../styles";
 import { containerStyles } from "../../styles/projectStyles";
+import { Box } from "@mui/material";
 
 const About = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <>
       <Box bgcolor={colors.primary.main}>

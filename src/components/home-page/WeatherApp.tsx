@@ -1,12 +1,12 @@
 import { Box, Button, Link, Stack, Typography } from "@mui/material";
 import { type RefObject } from "react";
-import { buttonStyle, colors, fontSizes } from "../../../styles";
+
+import { buttonStyle, colors, fontSizes } from "../../styles";
 import {
   containerStyles,
   desriptionStyles,
   projectImage,
-} from "../../../styles/projectStyles";
-import WeatherAppImage from "../../../images/weather-app.png";
+} from "../../styles/projectStyles";
 
 const WeatherApp = (props: {
   current: RefObject<HTMLDivElement>;
@@ -46,7 +46,7 @@ const WeatherApp = (props: {
             </Typography>
           </Box>
           <img
-            src={WeatherAppImage}
+            src="/images/weather-app.png"
             alt="weather application screenshot"
             style={projectImage}
           />

@@ -1,12 +1,12 @@
 import { Box, Button, Link, Stack, Typography } from "@mui/material";
 import { RefObject } from "react";
-import { buttonStyle, colors, fontSizes } from "../../../styles";
+
+import { buttonStyle, colors, fontSizes } from "../../styles";
 import {
   containerStyles,
   desriptionStyles,
   projectImage,
-} from "../../../styles/projectStyles";
-import ApplicationsAppVideo from "../../../images/applications-app.mp4";
+} from "../../styles/projectStyles";
 
 const ApplicationsApp = (props: {
   previous: RefObject<HTMLDivElement>;
@@ -43,7 +43,7 @@ const ApplicationsApp = (props: {
             </Typography>
           </Box>
           <video style={projectImage} controls muted>
-            <source src={ApplicationsAppVideo} type="video/mp4" />
+            <source src="/videos/applications-app.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </Stack>
