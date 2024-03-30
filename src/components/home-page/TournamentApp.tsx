@@ -1,14 +1,14 @@
 import { RefObject } from "react";
 import { Box, Button, Link, Stack, Typography } from "@mui/material";
-import { buttonStyle, colors, fontSizes } from "../../../styles";
+
+import { buttonStyle, colors, fontSizes } from "../../styles";
 import {
   containerStyles,
   desriptionStyles,
   projectImage,
-} from "../../../styles/projectStyles";
-import DictionaryAppImage from "../../../images/dictionary-app.png";
+} from "../../styles/projectStyles";
 
-const DictionaryApp = (props: {
+const TournamentApp = (props: {
   previous: RefObject<HTMLDivElement>;
   current: RefObject<HTMLDivElement>;
   next: RefObject<HTMLDivElement>;
@@ -21,29 +21,28 @@ const DictionaryApp = (props: {
           spacing={{ sm: 2, md: 4 }}
         >
           <Box sx={desriptionStyles}>
-            <Typography fontSize={fontSizes.XL}>
-              Dictionary Application
-            </Typography>
+            <Typography fontSize={fontSizes.XL}>Tournament App</Typography>
             <Typography>
-              You can search for any word`s definition and listen to the word`s
-              pronuncuation with the Dictionary Application. This product was
-              developed in React using REST API, React Hooks, Bootstrap. See the{" "}
-              <Link
-                target="blank"
-                href="https://github.com/yrshva/dictionary-app"
-              >
+              The product was developed in React using <strong>Redux</strong>,
+              React Hooks, Bootstrap. System can add as many teams as needed,
+              initially should start with none. After adding a new team it is
+              added on the bottom of a table and automatically paired with other
+              teams (all teams play one game with others). For a win, team gets
+              3 points, draw - 1, lost - 0. Table is ordered according to total
+              points. See the{" "}
+              <Link target="blank" href="https://github.com/yrshva/tournament">
                 source code on GitHub
               </Link>{" "}
               or try{" "}
-              <Link target="blank" href="https://wordbook-app.netlify.app/">
+              <Link target="blank" href="https://sport-tournament.netlify.app/">
                 demo
               </Link>{" "}
               to see how it works.
             </Typography>
           </Box>
           <img
-            src={DictionaryAppImage}
-            alt="dictionary application screenshot"
+            src="/images/tournament-app.png"
+            alt="tournament application screenshot"
             style={projectImage}
           />
         </Stack>
@@ -74,4 +73,4 @@ const DictionaryApp = (props: {
     </Box>
   );
 };
-export default DictionaryApp;
+export default TournamentApp;

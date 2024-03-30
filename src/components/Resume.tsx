@@ -1,4 +1,4 @@
-import "../../../styles/resume.css";
+import "../styles/resume.css";
 
 const Resume = () => {
   return (
@@ -14,8 +14,8 @@ const Resume = () => {
           <span className="c15 c22">Email</span>
           <span className="c15">: </span>
           <span className="c5">
-            <a className="c10" href="mailto:anastasiia.yershova@yahoo.com">
-              anastasiia.yershova@yahoo.com
+            <a className="c10" href="mailto:yershova.business@gmail.com">
+              yershova.business@gmail.com
             </a>
           </span>
           <span className="c14">&nbsp; &nbsp;</span>
