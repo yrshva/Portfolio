@@ -65,13 +65,13 @@ export const buttonStyle = ({
       : colors.secondary.dark;
 
   return {
-    "border-radius": "10px",
+    borderRadius: "10px",
     width: "150px",
     height: "55px",
     border: `4px double ${border}`,
     transition: "0.4s",
     color: colors.main.lighter,
-    "background-color": bg,
+    backgroundColor: bg,
     "&:hover": {
       "background-color": darken(bg ?? border, 0.08),
     },
