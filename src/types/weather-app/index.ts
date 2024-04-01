@@ -16,6 +16,14 @@ export interface CurrentLocationReponse {
   status: "success" | "error";
 }
 
+export interface Coordinates {
+  lon: number;
+  lat: number;
+}
+export interface City extends Coordinates {
+  name: string;
+}
+
 export type WeatherCondition =
   | "Thunderstorm"
   | "Drizzle"
@@ -42,10 +50,7 @@ export interface CurrentWeatherDetails {
 }
 
 export interface CurrentWeatherResponse {
-  coord: {
-    lon: number;
-    lat: number;
-  };
+  coord: Coordinates;
   weather: Array<CurrentWeatherDetails>;
   base: string;
   main: {
@@ -76,9 +81,4 @@ export interface CurrentWeatherResponse {
   id: number;
   name: string;
   cod: number;
-}
-
-export interface GetCurrentWeatherQueryParams {
-  latitude: number;
-  longitude: number;
 }

@@ -2,7 +2,7 @@ import { FetchQueryOptions } from "@tanstack/react-query";
 import {
   CurrentLocationReponse,
   CurrentWeatherResponse,
-  GetCurrentWeatherQueryParams,
+  Coordinates,
 } from "../../../types/weather-app";
 
 const getWeatherQueryConfig = () => ({
@@ -17,16 +17,16 @@ const getWeatherQueryConfig = () => ({
             console.warn(err);
             throw new Error(err);
           }),
-      staleTime: 5 * 60 * 1000,
+      staleTime: 15 * 60 * 1000,
     };
   },
   getCurrentWeather: ({
-    latitude,
-    longitude,
-  }: GetCurrentWeatherQueryParams): FetchQueryOptions<CurrentWeatherResponse> => {
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.NEXT_PUBLIC_OPEN_WEATHER_API_KEY}&units=metric`;
+    lat,
+    lon,
+  }: Coordinates): FetchQueryOptions<CurrentWeatherResponse> => {
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.NEXT_PUBLIC_OPEN_WEATHER_API_KEY}&units=metric`;
     return {
-      queryKey: ["current-weather", latitude, longitude],
+      queryKey: ["current-weather", lat, lon],
       queryFn: async () =>
         await fetch(apiUrl)
           .then((res) => res.json() as unknown as CurrentWeatherResponse)
@@ -34,7 +34,7 @@ const getWeatherQueryConfig = () => ({
             console.warn(err);
             throw new Error(err);
           }),
-      staleTime: 5 * 60 * 1000,
+      staleTime: 15 * 60 * 1000,
     };
   },
 });

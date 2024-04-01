@@ -23,7 +23,7 @@ export default function RootLayout({
       <head>
         <script src="https://kit.fontawesome.com/44428bec62.js" />
       </head>
-      <body style={{ margin: 0 }}>
+      <body style={{ margin: 0 }} suppressHydrationWarning={true}>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <ReactQueryClientProvider>

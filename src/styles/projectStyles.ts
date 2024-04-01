@@ -1,3 +1,5 @@
+import { CSSProperties } from "react";
+
 export const desriptionStyles = {
   maxWidth: "500px",
   display: "flex",
@@ -6,7 +8,7 @@ export const desriptionStyles = {
   alignItems: "center",
   padding: "10px",
 };
-export const containerStyles = {
+export const containerStyles: CSSProperties = {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",

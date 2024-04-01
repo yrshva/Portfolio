@@ -3,11 +3,9 @@ import { UseQueryResult } from "@tanstack/react-query";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import { ReactNode } from "react";
 
-import { containerStyles } from "../styles/projectStyles";
-
 interface QueryLoaderProps<T> {
   query: UseQueryResult<T>;
-  children: ReactNode;
+  children: (data: T) => ReactNode;
 }
 
 function QueryLoader<T>({ query, children }: QueryLoaderProps<T>) {
@@ -32,6 +30,10 @@ function QueryLoader<T>({ query, children }: QueryLoaderProps<T>) {
       </Box>
     );
   }
-  return <>{children}</>;
+  if (!query.isSuccess) {
+    return null;
+  }
+
+  return <>{children(query.data!)}</>;
 }
 export default QueryLoader;

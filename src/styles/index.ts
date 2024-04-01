@@ -73,7 +73,7 @@ export const buttonStyle = ({
     color: colors.main.lighter,
     backgroundColor: bg,
     "&:hover": {
-      "background-color": darken(bg ?? border, 0.08),
+      backgroundColor: darken(bg ?? border, 0.08),
     },
   };
 };
