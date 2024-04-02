@@ -15,7 +15,6 @@ export const containerStyles: CSSProperties = {
   minHeight: "100vh",
   padding: "60px 10px",
   textAlign: "center",
-  width: "100%",
 };
 export const projectImage = {
   maxWidth: "500px",

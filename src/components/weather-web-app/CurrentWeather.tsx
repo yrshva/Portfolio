@@ -6,15 +6,17 @@ import React from "react";
 import { colors, fontSizes } from "../../styles";
 import { City } from "../../types/weather-app";
 import getWeatherQueryConfig from "./helpers/requests";
+import getWeatherIcon from "./helpers/weatherIcon";
 import QueryLoader from "../QueryLoader";
 import LocalTime from "./LocalTime";
 
 interface CurrentWeatherProps {
   city: City;
 }
+
 const CurrentWeather: React.FC<CurrentWeatherProps> = ({ city }) => {
   const queryConfig = getWeatherQueryConfig();
-  const locationQuery = useQuery(
+  const query = useQuery(
     queryConfig.getCurrentWeather({
       lat: city.lat,
       lon: city.lon,
@@ -22,12 +24,12 @@ const CurrentWeather: React.FC<CurrentWeatherProps> = ({ city }) => {
   );
 
   return (
-    <QueryLoader query={locationQuery}>
-      {({ main, timezone, wind }) => {
-        const formattedTemp = `${Math.round(main.temp)} ℃`;
+    <QueryLoader query={query}>
+      {({ main, timezone, wind, weather }) => {
+        const formattedTemp = `${Math.round(main.temp)}℃`;
         const formattedWind = `Wind: ${Math.round(wind.speed)} km/h`;
-        const formattedTempMax = `Max: ${Math.round(main.temp_max)} ℃`;
-        const formattedTempMin = `Min: ${Math.round(main.temp_min)} ℃`;
+        const formattedTempMax = `Max: ${Math.round(main.temp_max)}℃`;
+        const formattedTempMin = `Min: ${Math.round(main.temp_min)}℃`;
 
         return (
           <Box
@@ -35,15 +37,21 @@ const CurrentWeather: React.FC<CurrentWeatherProps> = ({ city }) => {
               display: "flex",
               justifyContent: "space-between",
               mt: 2,
-              gap: 4,
+              alignItems: "center",
             }}
           >
-            <Box sx={{ width: "50%", overflowWrap: "break-word" }}>
+            <Box sx={{ width: "45%", overflowWrap: "break-word" }}>
               <Typography fontSize={fontSizes.XL}>{city.name}</Typography>
               <LocalTime timezone={timezone} />
             </Box>
+            <Box>
+              <Typography fontSize={40}>
+                {getWeatherIcon(weather[0].icon)}
+              </Typography>
+            </Box>
             <Box
               sx={{
+                width: "45%",
                 textAlign: "end",
                 overflowWrap: "break-word",
               }}

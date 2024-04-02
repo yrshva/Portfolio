@@ -11,6 +11,7 @@ const styles: WeatherAppStyles = {
     ...containerStyles,
     backgroundColor: colors.primary.main,
     textAlign: "unset",
+    flexDirection: "column",
   },
 };
 

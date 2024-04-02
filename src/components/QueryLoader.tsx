@@ -1,11 +1,11 @@
 import { Box, CircularProgress, IconButton, Typography } from "@mui/material";
 import { UseQueryResult } from "@tanstack/react-query";
 import RefreshIcon from "@mui/icons-material/Refresh";
-import { ReactNode } from "react";
+import React from "react";
 
 interface QueryLoaderProps<T> {
   query: UseQueryResult<T>;
-  children: (data: T) => ReactNode;
+  children: (data: T) => React.ReactNode;
 }
 
 function QueryLoader<T>({ query, children }: QueryLoaderProps<T>) {
