@@ -19,13 +19,14 @@ const DictionaryApp = (props: {
         <Stack
           direction={{ sm: "column", md: "row" }}
           spacing={{ sm: 2, md: 4 }}
+          gap={4}
         >
           <Box sx={desriptionStyles}>
             <Typography fontSize={fontSizes.XL}>
               Dictionary Application
             </Typography>
             <Typography>
-              You can search for any word`s definition and listen to the word`s
+              You can search for any 's definition and listen to the its
               pronuncuation with the Dictionary Application. This product was
               developed in React using REST API, React Hooks, Bootstrap. See the{" "}
               <Link

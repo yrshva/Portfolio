@@ -1,5 +1,6 @@
-import { Box, Button, Link, Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, Typography } from "@mui/material";
 import { type RefObject } from "react";
+import Link from "next/link";
 
 import { buttonStyle, colors, fontSizes } from "../../styles";
 import {
@@ -22,24 +23,18 @@ const WeatherApp = (props: {
         <Stack
           direction={{ sm: "column", md: "row" }}
           justifyContent="space-between"
+          gap={4}
         >
           <Box sx={desriptionStyles}>
             <Typography fontSize={fontSizes.XL}>Weather Application</Typography>
             <Typography>
               The designed product shows real-time weather forecast in over
-              200,000 cities. The Weather Application was developed in React
-              using REST API, React Hooks, Bootstrap. See the{" "}
-              <Link
-                target="blank"
-                href="https://github.com/yrshva/weather-forecast-app-with-select"
-              >
-                source code on GitHub
-              </Link>{" "}
-              or try{" "}
-              <Link
-                target="blank"
-                href="https://weather-forecast-all-cities.netlify.app/"
-              >
+              200,000 cities. The Weather Application was initially developed in
+              React.js and later migrated into{" "}
+              <strong>Next.js + Typescript</strong>. The app utilizes
+              technologies like <strong>React Query</strong> and{" "}
+              <strong>Material UI</strong>. Try{" "}
+              <Link target="blank" href="/projects/weather-web-app">
                 demo
               </Link>{" "}
               to see how it works.

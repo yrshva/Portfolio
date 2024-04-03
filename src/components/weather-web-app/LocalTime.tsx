@@ -2,7 +2,7 @@
 import { Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { DAYS, MONTHS } from "./helpers/dateConstants";
-import { colors, fontSizes, mainFontFamily } from "../../styles";
+import { colors, fontSizes } from "../../styles";
 
 interface LocalTimeProps {
   timezone: number;

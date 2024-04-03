@@ -18,21 +18,21 @@ const WeatherWebApp = () => {
   const [city, setCity] = useState<City | null>(null);
 
   return (
-    <QueryLoader query={locationQuery}>
-      {({ city: name, lat, lon }) => {
-        const currentCity: City = {
-          name,
-          lat: Number(lat),
-          lon: Number(lon),
-        };
+    <Box
+      sx={{
+        minHeight: "100vh",
+        backgroundColor: colors.primary.main,
+      }}
+    >
+      <QueryLoader query={locationQuery}>
+        {({ city: name, lat, lon }) => {
+          const currentCity: City = {
+            name,
+            lat: Number(lat),
+            lon: Number(lon),
+          };
 
-        return (
-          <Box
-            sx={{
-              minHeight: "100vh",
-              backgroundColor: colors.primary.main,
-            }}
-          >
+          return (
             <Box
               sx={{
                 width: "100%",
@@ -59,10 +59,10 @@ const WeatherWebApp = () => {
               </Box>
               <WeatherForecast city={city ?? currentCity} />
             </Box>
-          </Box>
-        );
-      }}
-    </QueryLoader>
+          );
+        }}
+      </QueryLoader>
+    </Box>
   );
 };
 

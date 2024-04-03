@@ -30,7 +30,7 @@ const MobileDictionary = (props: {
             </Typography>
             <Typography>
               Dictionary application with some new features like different
-              accents`` pronunciation. Developed in React Native using
+              accents' pronunciation. Developed in React Native using
               Typescript, REST API, React Hooks and Audio player library. See
               the{" "}
               <Link
