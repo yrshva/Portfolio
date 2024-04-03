@@ -10,7 +10,7 @@ import CurrentWeather from "../../../components/weather-web-app/CurrentWeather";
 import QueryLoader from "../../../components/QueryLoader";
 import Search from "../../../components/weather-web-app/Search";
 import { City } from "../../../types/weather-app";
-import styles from "../../../styles/weatherAppStyles";
+import { colors } from "../../../styles";
 
 const WeatherWebApp = () => {
   const queryConfig = getWeatherQueryConfig();
@@ -27,17 +27,38 @@ const WeatherWebApp = () => {
         };
 
         return (
-          <Box sx={styles.container}>
-            <Box sx={{ width: "90%", minWidth: "250px", maxWidth: "450px" }}>
-              <Search
-                onSelect={(value) => {
-                  setCity(value);
+          <Box
+            sx={{
+              minHeight: "100vh",
+              backgroundColor: colors.primary.main,
+            }}
+          >
+            <Box
+              sx={{
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <Box
+                sx={{
+                  width: "90%",
+                  minWidth: "250px",
+                  maxWidth: "450px",
+                  alignSelf: "center",
+                  mt: "90px",
                 }}
-              />
-              <ShowCurrentLocation onClick={() => setCity(currentCity)} />
-              <CurrentWeather city={city ?? currentCity} />
+              >
+                <Search
+                  onSelect={(value) => {
+                    setCity(value);
+                  }}
+                />
+                <ShowCurrentLocation onClick={() => setCity(currentCity)} />
+                <CurrentWeather city={city ?? currentCity} />
+              </Box>
+              <WeatherForecast city={city ?? currentCity} />
             </Box>
-            <WeatherForecast city={city ?? currentCity} />
           </Box>
         );
       }}

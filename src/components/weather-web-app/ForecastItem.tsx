@@ -13,6 +13,7 @@ const ForecastItem: React.FC<ForecastItemProps> = ({ forecast }) => {
   const currentTemp = Math.round(forecast.temp.day);
   const tempMax = Math.round(forecast.temp.max);
   const tempMin = Math.round(forecast.temp.min);
+  const wind = Math.round(forecast.wind_speed);
 
   return (
     <Box
@@ -20,6 +21,7 @@ const ForecastItem: React.FC<ForecastItemProps> = ({ forecast }) => {
         backgroundColor: colors.primary.dark,
         padding: "16px",
         borderRadius: 5,
+        width: "150px",
       }}
     >
       <Typography>{getForecastDay(forecast.dt)}</Typography>
@@ -37,6 +39,9 @@ const ForecastItem: React.FC<ForecastItemProps> = ({ forecast }) => {
           {getWeatherIcon(forecast.weather[0].icon)}
         </Typography>
       </Box>
+      <Typography color={colors.main.lighter}>Max: {tempMax}℃</Typography>
+      <Typography color={colors.main.lighter}>Min: {tempMin}℃</Typography>
+      <Typography color={colors.main.lighter}>Wind: {wind} km/h</Typography>
     </Box>
   );
 };

@@ -26,13 +26,13 @@ const WeatherForecast: React.FC<WeatherForecastProps> = ({ city }) => {
         return (
           <Box
             sx={{
+              gap: 4,
               display: "flex",
-              rowGap: 4,
-              columnGap: 8,
               flexWrap: "wrap",
               justifyContent: "center",
               maxWidth: "900px",
               mt: "32px",
+              alignSelf: "center",
             }}
           >
             {daily.map((item) => (

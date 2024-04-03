@@ -80,7 +80,16 @@ const Search: React.FC<SearchProps> = ({ onSelect }) => {
           });
         }
       }}
-      renderInput={(params) => <TextField {...params} label="Search" />}
+      renderInput={(params) => {
+        return (
+          <TextField
+            {...params}
+            label="Search"
+            // Currently MUI doesn't offer an option to remove the arrow icon
+            InputProps={{ ...params.InputProps, endAdornment: undefined }}
+          />
+        );
+      }}
       fullWidth
     />
   );

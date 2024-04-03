@@ -16,7 +16,7 @@ function QueryLoader<T>({ query, children }: QueryLoaderProps<T>) {
       </Box>
     );
   }
-  if (query.isError) {
+  if (!query.isSuccess) {
     return (
       <Box>
         <IconButton
@@ -34,6 +34,6 @@ function QueryLoader<T>({ query, children }: QueryLoaderProps<T>) {
     return null;
   }
 
-  return <>{children(query.data!)}</>;
+  return <>{children(query.data)}</>;
 }
 export default QueryLoader;

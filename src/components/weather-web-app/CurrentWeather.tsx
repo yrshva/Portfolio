@@ -30,7 +30,6 @@ const CurrentWeather: React.FC<CurrentWeatherProps> = ({ city }) => {
         const formattedWind = `Wind: ${Math.round(wind.speed)} km/h`;
         const formattedTempMax = `Max: ${Math.round(main.temp_max)}℃`;
         const formattedTempMin = `Min: ${Math.round(main.temp_min)}℃`;
-
         return (
           <Box
             sx={{
@@ -56,7 +55,9 @@ const CurrentWeather: React.FC<CurrentWeatherProps> = ({ city }) => {
                 overflowWrap: "break-word",
               }}
             >
-              <Typography fontSize={fontSizes.XL}>{formattedTemp}</Typography>
+              <Typography fontSize={fontSizes.XL} fontWeight={500}>
+                {formattedTemp}
+              </Typography>
               <Typography fontSize={fontSizes.M} color={colors.main.lighter}>
                 {formattedWind}
               </Typography>
