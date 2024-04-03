@@ -19,6 +19,7 @@ const TournamentApp = (props: {
         <Stack
           direction={{ sm: "column", md: "row" }}
           spacing={{ sm: 2, md: 4 }}
+          gap={4}
         >
           <Box sx={desriptionStyles}>
             <Typography fontSize={fontSizes.XL}>Tournament App</Typography>

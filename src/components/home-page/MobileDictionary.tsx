@@ -30,7 +30,7 @@ const MobileDictionary = (props: {
             </Typography>
             <Typography>
               Dictionary application with some new features like different
-              accents`` pronunciation. Developed in React Native using
+              accents' pronunciation. Developed in React Native using
               Typescript, REST API, React Hooks and Audio player library. See
               the{" "}
               <Link
@@ -42,7 +42,7 @@ const MobileDictionary = (props: {
               .
             </Typography>
           </Box>
-          <video style={projectImage} controls muted>
+          <video style={{ ...projectImage, maxHeight: "70vh" }} controls muted>
             <source src="/videos/mobile-dictionary.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
