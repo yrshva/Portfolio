@@ -1,5 +1,5 @@
 "use client";
-import { Button, Modal } from "@mui/material";
+import { Box, Button, Modal } from "@mui/material";
 import React, { RefObject, useState } from "react";
 
 import { ContactForm } from "../../ContactForm";
@@ -38,7 +38,9 @@ const MainPageButtons: React.FC<MainPageButtonsProps> = ({ projects }) => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <ContactForm type="modal" setOpen={setOpen} />
+        <Box>
+          <ContactForm type="modal" setOpen={setOpen} />
+        </Box>
       </Modal>
     </>
   );

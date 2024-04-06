@@ -11,13 +11,13 @@ import {
 const ApplicationsApp = (props: {
   previous: RefObject<HTMLDivElement>;
   current: RefObject<HTMLDivElement>;
-  next: RefObject<HTMLDivElement>;
 }) => {
   return (
     <Box
       ref={props.current}
       bgcolor={colors.secondary.main}
       sx={containerStyles}
+      gap={4}
     >
       <Box>
         <Stack
@@ -26,7 +26,7 @@ const ApplicationsApp = (props: {
         >
           <Box sx={desriptionStyles}>
             <Typography fontSize={fontSizes.XL}>
-              Applications Application
+              Application form with validation
             </Typography>
             <Typography>
               A small application in React + Typescript using REST API,
@@ -60,14 +60,6 @@ const ApplicationsApp = (props: {
             }}
           >
             Previous
-          </Button>
-          <Button
-            sx={buttonStyle({ color: "primary" })}
-            onClick={() => {
-              props.next.current?.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            Next
           </Button>
         </Stack>
       </Box>
