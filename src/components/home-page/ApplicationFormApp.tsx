@@ -1,23 +1,20 @@
-import { Box, Button, Link, Stack, Typography } from "@mui/material";
-import { RefObject } from "react";
+import { Box, Link, Stack, Typography } from "@mui/material";
 
-import { buttonStyle, colors, fontSizes } from "../../styles";
+import { colors, fontSizes } from "../../styles";
 import {
   containerStyles,
   desriptionStyles,
   projectImage,
 } from "../../styles/projectStyles";
+import PreviousButton from "./PreviousButton";
 
-const ApplicationsApp = (props: {
-  previous: RefObject<HTMLDivElement>;
-  current: RefObject<HTMLDivElement>;
-}) => {
+const ApplicationFormApp = () => {
   return (
     <Box
-      ref={props.current}
       bgcolor={colors.secondary.main}
       sx={containerStyles}
       gap={4}
+      id="application-form-app"
     >
       <Box>
         <Stack
@@ -26,13 +23,13 @@ const ApplicationsApp = (props: {
         >
           <Box sx={desriptionStyles}>
             <Typography fontSize={fontSizes.XL}>
-              Application form with validation
+              Application form with validations
             </Typography>
             <Typography>
-              A small application in React + Typescript using REST API,
-              Bootstrap, json-server. The data in the table is loaded from the
-              server. All the fields contain validation, form has appropriate
-              checks before submitting (disable Buttons or others) See the{" "}
+              A small application developed in <strong>React.js</strong> +{" "}
+              <strong>Typescript</strong> using Bootstrap and json-server. The
+              data in the table is loaded from the server. All the fields
+              contain appropriate validations. You can see the{" "}
               <Link
                 href="https://github.com/yrshva/fake-applications"
                 target="blank"
@@ -53,17 +50,10 @@ const ApplicationsApp = (props: {
           display="flex"
           justifyContent="space-evenly"
         >
-          <Button
-            sx={buttonStyle({ color: "secondary" })}
-            onClick={() => {
-              props.previous.current?.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            Previous
-          </Button>
+          <PreviousButton previousId="tournament-app" />
         </Stack>
       </Box>
     </Box>
   );
 };
-export default ApplicationsApp;
+export default ApplicationFormApp;

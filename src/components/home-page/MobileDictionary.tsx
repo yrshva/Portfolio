@@ -1,23 +1,20 @@
-import { RefObject } from "react";
-import { Box, Button, Link, Stack, Typography } from "@mui/material";
+import { Box, Link, Stack, Typography } from "@mui/material";
 
-import { buttonStyle, colors, fontSizes } from "../../styles";
+import { colors, fontSizes } from "../../styles";
 import {
   containerStyles,
   desriptionStyles,
   projectImage,
 } from "../../styles/projectStyles";
+import PreviousButton from "./PreviousButton";
+import NextButton from "./NextButton";
 
-const MobileDictionary = (props: {
-  previous: RefObject<HTMLDivElement>;
-  current: RefObject<HTMLDivElement>;
-  next: RefObject<HTMLDivElement>;
-}) => {
+const MobileDictionary = () => {
   return (
     <Box
-      ref={props.current}
       bgcolor={colors.secondary.main}
       sx={containerStyles}
+      id="dictionary-mobile-app"
     >
       <Box>
         <Stack
@@ -30,9 +27,8 @@ const MobileDictionary = (props: {
             </Typography>
             <Typography>
               Dictionary application with some new features like different
-              accents' pronunciation. Developed in React Native using
-              Typescript, REST API, React Hooks and Audio player library. See
-              the{" "}
+              accents' pronunciation. Developed in React Native using Expo CLI
+              and Typescript. See the{" "}
               <Link
                 target="blank"
                 href="https://github.com/yrshva/react-native-dictionary-app"
@@ -53,22 +49,8 @@ const MobileDictionary = (props: {
           display="flex"
           justifyContent="space-evenly"
         >
-          <Button
-            sx={buttonStyle({ color: "secondary" })}
-            onClick={() => {
-              props.previous.current?.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            Previous
-          </Button>
-          <Button
-            sx={buttonStyle({ color: "primary" })}
-            onClick={() => {
-              props.next.current?.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            Next
-          </Button>
+          <PreviousButton previousId="dictionary-web-app" />
+          <NextButton nextId="tournament-app" />
         </Stack>
       </Box>
     </Box>

@@ -41,6 +41,7 @@ const SelectProject = () => {
         onChange={(event) => {
           setValue(event.target.value as ProjectName);
         }}
+        sx={{ textAlign: "start" }}
         fullWidth
       >
         {projects.map(({ id, name }) => (

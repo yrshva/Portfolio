@@ -1,29 +1,27 @@
 "use client";
 import { Box, Button, Modal } from "@mui/material";
-import React, { RefObject, useState } from "react";
+import React, { useState } from "react";
 
-import { ContactForm } from "../../ContactForm";
-import { buttonStyle } from "../../../styles";
+import { ContactForm } from "../ContactForm";
+import { buttonStyle } from "../../styles";
+import { useRouter } from "next/navigation";
 
-interface MainPageButtonsProps {
-  projects: RefObject<HTMLDivElement>;
-}
-
-const MainPageButtons: React.FC<MainPageButtonsProps> = ({ projects }) => {
+const MainPageButtons: React.FC = () => {
   const [open, setOpen] = useState(false);
+  const router = useRouter();
+
   const handleOpen = () => {
     setOpen(true);
   };
   const handleClose = () => {
     setOpen(false);
   };
+
   return (
     <>
       <Button
         onClick={() => {
-          projects.current?.scrollIntoView({
-            behavior: "smooth",
-          });
+          router.push("#weather-app");
         }}
         sx={buttonStyle({ color: "secondary" })}
       >

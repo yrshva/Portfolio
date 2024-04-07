@@ -1,12 +1,5 @@
 "use client";
-import {
-  Box,
-  Button,
-  List,
-  ListItemButton,
-  ListItemText,
-  useMediaQuery,
-} from "@mui/material";
+import { Box, Button, List, ListItemButton, ListItemText } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -22,7 +15,6 @@ const MobileNav = () => {
   const [burgerClicked, setBurgerClicked] = useState<boolean>(false);
   const burger = useRef<HTMLHeadingElement>(null);
   const router = useRouter();
-  const isMobile = useMediaQuery("(max-width: 600px)");
   const handleBurgerButtonClick = () => {
     burgerClicked ? setBurgerClicked(false) : setBurgerClicked(true);
   };
@@ -47,12 +39,8 @@ const MobileNav = () => {
     setBurgerClicked(false);
   }, [pathname]);
 
-  if (!isMobile) {
-    return null;
-  }
-
   return (
-    <Box ref={burger} display="block">
+    <Box ref={burger} display={{ xs: "block", sm: "none" }}>
       <Box sx={burgerWrapStyles}>
         <Box sx={burgerIconStyles}>
           <Button onClick={handleBurgerButtonClick} sx={burgerButtonStyles}>
@@ -76,6 +64,13 @@ const MobileNav = () => {
               }}
             >
               <ListItemText primary="About" />
+            </ListItemButton>
+            <ListItemButton
+              onClick={() => {
+                router.push("/about#contact");
+              }}
+            >
+              <ListItemText primary="Contact" />
             </ListItemButton>
           </List>
         </Box>
