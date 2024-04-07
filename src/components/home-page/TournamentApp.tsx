@@ -1,20 +1,17 @@
-import { RefObject } from "react";
-import { Box, Button, Link, Stack, Typography } from "@mui/material";
+import { Box, Link, Stack, Typography } from "@mui/material";
 
-import { buttonStyle, colors, fontSizes } from "../../styles";
+import { colors, fontSizes } from "../../styles";
 import {
   containerStyles,
   desriptionStyles,
   projectImage,
 } from "../../styles/projectStyles";
+import NextButton from "./NextButton";
+import PreviousButton from "./PreviousButton";
 
-const TournamentApp = (props: {
-  previous: RefObject<HTMLDivElement>;
-  current: RefObject<HTMLDivElement>;
-  next: RefObject<HTMLDivElement>;
-}) => {
+const TournamentApp = () => {
   return (
-    <Box ref={props.current} bgcolor={colors.primary.main} sx={containerStyles}>
+    <Box bgcolor={colors.primary.main} sx={containerStyles} id="tournament-app">
       <Box>
         <Stack
           direction={{ sm: "column", md: "row" }}
@@ -53,22 +50,8 @@ const TournamentApp = (props: {
           display="flex"
           justifyContent="space-evenly"
         >
-          <Button
-            sx={buttonStyle({ color: "secondary" })}
-            onClick={() => {
-              props.previous.current?.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            Previous
-          </Button>
-          <Button
-            sx={buttonStyle({ color: "primary" })}
-            onClick={() => {
-              props.next.current?.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            Next
-          </Button>
+          <PreviousButton previousId="dictionary-mobile-app" />
+          <NextButton nextId="application-form-app" />
         </Stack>
       </Box>
     </Box>

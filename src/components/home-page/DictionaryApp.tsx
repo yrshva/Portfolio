@@ -1,20 +1,21 @@
-import { RefObject } from "react";
-import { Box, Button, Link, Stack, Typography } from "@mui/material";
+import { Box, Link, Stack, Typography } from "@mui/material";
 
-import { buttonStyle, colors, fontSizes } from "../../styles";
+import { colors, fontSizes } from "../../styles";
 import {
   containerStyles,
   desriptionStyles,
   projectImage,
 } from "../../styles/projectStyles";
+import PreviousButton from "./PreviousButton";
+import NextButton from "./NextButton";
 
-const DictionaryApp = (props: {
-  previous: RefObject<HTMLDivElement>;
-  current: RefObject<HTMLDivElement>;
-  next: RefObject<HTMLDivElement>;
-}) => {
+const DictionaryApp = () => {
   return (
-    <Box ref={props.current} bgcolor={colors.primary.main} sx={containerStyles}>
+    <Box
+      bgcolor={colors.primary.main}
+      sx={containerStyles}
+      id="dictionary-web-app"
+    >
       <Box>
         <Stack
           direction={{ sm: "column", md: "row" }}
@@ -54,22 +55,8 @@ const DictionaryApp = (props: {
           display="flex"
           justifyContent="space-evenly"
         >
-          <Button
-            sx={buttonStyle({ color: "secondary" })}
-            onClick={() => {
-              props.previous.current?.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            Previous
-          </Button>
-          <Button
-            sx={buttonStyle({ color: "primary" })}
-            onClick={() => {
-              props.next.current?.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            Next
-          </Button>
+          <PreviousButton previousId="weather-app" />
+          <NextButton nextId="dictionary-mobile-app" />
         </Stack>
       </Box>
     </Box>

@@ -1,24 +1,17 @@
-import { Box, Button, Stack, Typography } from "@mui/material";
-import { type RefObject } from "react";
+import { Box, Stack, Typography } from "@mui/material";
 import Link from "next/link";
 
-import { buttonStyle, colors, fontSizes } from "../../styles";
+import { colors, fontSizes } from "../../styles";
 import {
   containerStyles,
   desriptionStyles,
   projectImage,
 } from "../../styles/projectStyles";
+import NextButton from "./NextButton";
 
-const WeatherApp = (props: {
-  current: RefObject<HTMLDivElement>;
-  next: RefObject<HTMLDivElement>;
-}) => {
+const WeatherApp = () => {
   return (
-    <Box
-      ref={props.current}
-      bgcolor={colors.secondary.main}
-      sx={containerStyles}
-    >
+    <Box bgcolor={colors.secondary.main} sx={containerStyles} id="weather-app">
       <Box>
         <Stack
           direction={{ sm: "column", md: "row" }}
@@ -34,10 +27,8 @@ const WeatherApp = (props: {
               <strong>Next.js + Typescript</strong>. The app utilizes
               technologies like <strong>React Query</strong> and{" "}
               <strong>Material UI</strong>. Try{" "}
-              <Link target="blank" href="/projects/weather-web-app">
-                demo
-              </Link>{" "}
-              to see how it works.
+              <Link href="/projects/weather-web-app">demo</Link> to see how it
+              works.
             </Typography>
           </Box>
           <img
@@ -52,15 +43,7 @@ const WeatherApp = (props: {
           display="flex"
           justifyContent="space-evenly"
         >
-          {" "}
-          <Button
-            sx={buttonStyle({ color: "primary" })}
-            onClick={() => {
-              props.next.current?.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            Next
-          </Button>
+          <NextButton nextId="dictionary-web-app" />
         </Stack>
       </Box>
     </Box>
