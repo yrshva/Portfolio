@@ -35,9 +35,9 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({ experience }) => {
         </Box>
       </Box>
       {description.map((item, index) => (
-        <Box display="flex" flexDirection="row" gap={1}>
+        <Box display="flex" flexDirection="row" gap={1} key={index}>
           <Typography>✨</Typography>
-          <Typography key={index}>{item}</Typography>
+          <Typography>{item}</Typography>
         </Box>
       ))}
     </Box>
