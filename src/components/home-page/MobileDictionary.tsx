@@ -27,9 +27,8 @@ const MobileDictionary = () => {
             </Typography>
             <Typography>
               Dictionary application with some new features like different
-              accents' pronunciation. Developed in React Native using
-              Typescript, REST API, React Hooks and Audio player library. See
-              the{" "}
+              accents' pronunciation. Developed in React Native using Expo CLI
+              and Typescript. See the{" "}
               <Link
                 target="blank"
                 href="https://github.com/yrshva/react-native-dictionary-app"

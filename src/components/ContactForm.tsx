@@ -1,16 +1,15 @@
 "use client";
 import emailjs from "@emailjs/browser";
 import { Box, Button, FormGroup, TextField } from "@mui/material";
+import { CSSProperties } from "@mui/material/styles/createMixins";
 import React from "react";
 
-const modalStyle = {
-  position: "absolute" as "absolute",
+const modalStyle: CSSProperties = {
+  position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
   bgcolor: "background.paper",
-  boxShadow: 24,
   p: 4,
 };
 
@@ -46,9 +45,14 @@ export const ContactForm = ({
   return (
     <Box
       id="contact"
-      sx={type === "modal" ? modalStyle : undefined}
+      sx={{
+        width: "90%",
+        maxWidth: "400px",
+        ...(type === "modal" && modalStyle),
+      }}
       component="form"
       onSubmit={handleSubmit}
+      maxWidth="85vw"
     >
       <FormGroup>
         <TextField
@@ -87,7 +91,8 @@ export const ContactForm = ({
           id="filled-textarea"
           label="Message:"
           name="message"
-          rows={4}
+          minRows={6}
+          maxRows={10}
           multiline
           variant="filled"
         />

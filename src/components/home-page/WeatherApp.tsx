@@ -21,12 +21,12 @@ const WeatherApp = () => {
           <Box sx={desriptionStyles}>
             <Typography fontSize={fontSizes.XL}>Weather Application</Typography>
             <Typography>
-              The designed product shows real-time weather forecast in over
+              The designed product shows real-time weather forecast for over
               200,000 cities. The Weather Application was initially developed in
-              React.js and later migrated into{" "}
+              React.js and later migrated to{" "}
               <strong>Next.js + Typescript</strong>. The app utilizes
-              technologies like <strong>React Query</strong> and{" "}
-              <strong>Material UI</strong>. Try{" "}
+              technologies such as <strong>React Query</strong> and{" "}
+              <strong>Material UI</strong>. You can try the{" "}
               <Link href="/projects/weather-web-app">demo</Link> to see how it
               works.
             </Typography>

@@ -65,6 +65,13 @@ const MobileNav = () => {
             >
               <ListItemText primary="About" />
             </ListItemButton>
+            <ListItemButton
+              onClick={() => {
+                router.push("/about#contact");
+              }}
+            >
+              <ListItemText primary="Contact" />
+            </ListItemButton>
           </List>
         </Box>
       )}

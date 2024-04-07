@@ -27,9 +27,10 @@ const DictionaryApp = () => {
               Dictionary Application
             </Typography>
             <Typography>
-              You can search for any 's definition and listen to the its
+              You can search for any word's definition and listen to its
               pronuncuation with the Dictionary Application. This product was
-              developed in React using REST API, React Hooks, Bootstrap. See the{" "}
+              developed in React.js using REST API, React Hooks, Bootstrap. See
+              the{" "}
               <Link
                 target="blank"
                 href="https://github.com/yrshva/dictionary-app"

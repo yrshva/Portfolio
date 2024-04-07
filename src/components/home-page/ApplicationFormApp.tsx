@@ -1,4 +1,4 @@
-import { Box, Button, Link, Stack, Typography } from "@mui/material";
+import { Box, Link, Stack, Typography } from "@mui/material";
 
 import { colors, fontSizes } from "../../styles";
 import {
@@ -23,13 +23,13 @@ const ApplicationFormApp = () => {
         >
           <Box sx={desriptionStyles}>
             <Typography fontSize={fontSizes.XL}>
-              Application form with validation
+              Application form with validations
             </Typography>
             <Typography>
-              A small application in React + Typescript using REST API,
-              Bootstrap, json-server. The data in the table is loaded from the
-              server. All the fields contain validation, form has appropriate
-              checks before submitting (disable Buttons or others) See the{" "}
+              A small application developed in <strong>React.js</strong> +{" "}
+              <strong>Typescript</strong> using Bootstrap and json-server. The
+              data in the table is loaded from the server. All the fields
+              contain appropriate validations. You can see the{" "}
               <Link
                 href="https://github.com/yrshva/fake-applications"
                 target="blank"

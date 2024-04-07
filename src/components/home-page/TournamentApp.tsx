@@ -21,17 +21,20 @@ const TournamentApp = () => {
           <Box sx={desriptionStyles}>
             <Typography fontSize={fontSizes.XL}>Tournament App</Typography>
             <Typography>
-              The product was developed in React using <strong>Redux</strong>,
-              React Hooks, Bootstrap. System can add as many teams as needed,
-              initially should start with none. After adding a new team it is
-              added on the bottom of a table and automatically paired with other
-              teams (all teams play one game with others). For a win, team gets
-              3 points, draw - 1, lost - 0. Table is ordered according to total
-              points. See the{" "}
+              The product was developed in <strong>React.js</strong> using{" "}
+              <strong>Redux store</strong> for state management and Bootstrap
+              for styling. The project idea is a tournament table that allows
+              adding as many teams as needed, initially starting with none.
+              After adding a new team, it is added to the bottom of the table
+              and automatically paired with other teams (each team plays a
+              single game with every team displayed on the table). For a win, a
+              team gets 3 points, for a draw - 1 point, and for a loss - 0
+              points. Table items are sorted by total points in ascending order.
+              You can see the{" "}
               <Link target="blank" href="https://github.com/yrshva/tournament">
                 source code on GitHub
               </Link>{" "}
-              or try{" "}
+              or try the{" "}
               <Link target="blank" href="https://sport-tournament.netlify.app/">
                 demo
               </Link>{" "}
