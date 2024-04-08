@@ -8,7 +8,7 @@ const backgroundColor = "20232A";
 
 const SkillsSection = () => {
   return (
-    <Box maxWidth="600px">
+    <Box maxWidth="600px" mt={{ xs: 4, sm: 0 }}>
       <Typography fontFamily={codeFontFamily}>Skills</Typography>
       <Box
         sx={{

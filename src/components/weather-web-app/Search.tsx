@@ -28,10 +28,7 @@ const Search: React.FC<SearchProps> = ({ onSelect }) => {
     <Autocomplete
       id="select-city"
       disablePortal
-      blurOnSelect
-      clearOnBlur
-      clearOnEscape
-      disableClearable={input.length < 1}
+      value={null} // reset selected value every time
       open={input.length > 1}
       inputValue={input}
       options={sortedCities}

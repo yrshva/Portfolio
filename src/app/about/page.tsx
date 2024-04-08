@@ -10,7 +10,7 @@ const About = () => {
   return (
     <>
       <Box bgcolor={colors.primary.main}>
-        <Box p="20px" sx={{ ...containerStyles, flexDirection: "column" }}>
+        <Box sx={{ ...containerStyles, flexDirection: "column" }}>
           <SkillsSection />
           <ExperienceSection />
         </Box>

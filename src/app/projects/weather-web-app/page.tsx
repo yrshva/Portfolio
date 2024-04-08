@@ -16,7 +16,6 @@ const WeatherWebApp = () => {
   const queryConfig = getWeatherQueryConfig();
   const locationQuery = useQuery(queryConfig.getCurrentLocation());
   const [city, setCity] = useState<City | null>(null);
-
   return (
     <Box
       sx={{
@@ -38,6 +37,7 @@ const WeatherWebApp = () => {
                 width: "100%",
                 display: "flex",
                 flexDirection: "column",
+                paddingBlock: 11,
               }}
             >
               <Box
@@ -46,7 +46,6 @@ const WeatherWebApp = () => {
                   minWidth: "250px",
                   maxWidth: "450px",
                   alignSelf: "center",
-                  mt: "90px",
                 }}
               >
                 <Search
