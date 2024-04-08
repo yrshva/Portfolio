@@ -1,9 +1,15 @@
 "use client";
-import { Box, Button, List, ListItemButton, ListItemText } from "@mui/material";
+import {
+  Box,
+  Button,
+  Collapse,
+  List,
+  ListItemButton,
+  ListItemText,
+} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { usePathname } from "next/navigation";
 
 import {
   burgerButtonStyles,
@@ -18,7 +24,11 @@ const MobileNav = () => {
   const handleBurgerButtonClick = () => {
     burgerClicked ? setBurgerClicked(false) : setBurgerClicked(true);
   };
-  const pathname = usePathname();
+
+  const onNavigate = (route: string) => {
+    router.push(route);
+    setBurgerClicked(false);
+  };
 
   useEffect(() => {
     const handleClickOutside = (event: Event) => {
@@ -35,10 +45,6 @@ const MobileNav = () => {
     };
   }, [burger]);
 
-  useEffect(() => {
-    setBurgerClicked(false);
-  }, [pathname]);
-
   return (
     <Box ref={burger} display={{ xs: "block", sm: "none" }}>
       <Box sx={burgerWrapStyles}>
@@ -48,33 +54,31 @@ const MobileNav = () => {
           </Button>
         </Box>
       </Box>
-      {burgerClicked && (
-        <Box mt={6}>
-          <List>
-            <ListItemButton
-              onClick={() => {
-                router.push("/");
-              }}
-            >
-              <ListItemText primary="Home" />
-            </ListItemButton>
-            <ListItemButton
-              onClick={() => {
-                router.push("/about");
-              }}
-            >
-              <ListItemText primary="About" />
-            </ListItemButton>
-            <ListItemButton
-              onClick={() => {
-                router.push("/about#contact");
-              }}
-            >
-              <ListItemText primary="Contact" />
-            </ListItemButton>
-          </List>
-        </Box>
-      )}
+      <Collapse in={burgerClicked}>
+        <List>
+          <ListItemButton
+            onClick={() => {
+              onNavigate("/");
+            }}
+          >
+            <ListItemText primary="Home" />
+          </ListItemButton>
+          <ListItemButton
+            onClick={() => {
+              onNavigate("/about");
+            }}
+          >
+            <ListItemText primary="About" />
+          </ListItemButton>
+          <ListItemButton
+            onClick={() => {
+              onNavigate("/about#contact");
+            }}
+          >
+            <ListItemText primary="Contact" />
+          </ListItemButton>
+        </List>
+      </Collapse>
     </Box>
   );
 };

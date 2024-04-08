@@ -16,21 +16,18 @@ export const fullHeaderStyles: CSSProperties = {
   lineHeight: "60px",
   fontFamily: mainFontFamily,
 };
+
 export const burgerWrapStyles: CSSProperties = {
   width: "100%",
-  padding: "0 10px",
-  lineHeight: "60px",
-  backgroundColor: colors.primary.dark,
   fontFamily: mainFontFamily,
+  textAlign: "end",
+  padding: "10px",
 };
 export const burgerIconStyles: CSSProperties = {
-  lineHeight: "normal",
-  position: "absolute",
-  top: "10px",
-  right: "10px",
+  paddingRight: 2,
 };
+
 export const burgerButtonStyles: CSSProperties = {
-  background: "none",
   border: "solid rgb(42, 52, 83) 0.1px",
   borderRadius: "5px",
   transition: "0.2s",

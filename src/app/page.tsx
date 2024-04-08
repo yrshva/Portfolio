@@ -15,7 +15,7 @@ const Home = () => {
     <>
       <Box>
         <Box
-          sx={{ ...containerStyles, paddingTop: "60px" }}
+          sx={{ ...containerStyles, paddingBlock: 0 }}
           bgcolor={colors.primary.main}
         >
           <Box>
