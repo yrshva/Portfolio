@@ -23,4 +23,14 @@ module.exports = {
       NEXT_PUBLIC_OPEN_WEATHER_API_KEY: process.env.NEXT_PUBLIC_OPEN_WEATHER_API_KEY,
       NEXT_PUBLIC_IP_FINDER_API_KEY: process.env.NEXT_PUBLIC_IP_FINDER_API_KEY,
     },
+    experimental: {
+      headers() {
+        return [
+          {
+            source: "/.well-known/apple-app-site-association",
+            headers: [{ key: "content-type", value: "application/json" }]
+          }
+        ];
+      }
+    }
   }
